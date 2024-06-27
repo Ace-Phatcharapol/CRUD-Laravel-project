@@ -19,11 +19,19 @@ Route::get('/', function () {
 
 Route::get('about', function () {
     return view('aboutus');
-});
+})->name('about');
+
+Route::get('shop', function () {
+    return view('shop');
+})->name('shop');
 
 Route::get('blog', function () {
-    return "<h1>หน้าบทความ</h1>";
-});
+    return view('blog');
+})->name('blog');
+
+Route::get('contact', function () {
+    return view('contact');
+})->name('contact');
 
 Route::get('blog/{name}', function ($name) {
     return "<h1>หน้าบทความ $name </h1>";
