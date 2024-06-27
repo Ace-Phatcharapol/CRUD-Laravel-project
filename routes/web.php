@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,59 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $name = "Ace Phatcharapol";
-    $date = "27/6/2567";
-    return view('aboutus', compact('name', 'date'));
-})->name('about');
+Route::get('about', [AdminController::class,'about'])->name('about');
 
 Route::get('shop', function () {
     return view('shop');
 })->name('shop');
 
-Route::get('blog', function () {
-    $blogs = [
-        [
-            'title' => "บทความที่ 1",
-            'content' => "เนื้อหาบทความที่ 1",
-            'status' => true,
-        ],
-        [
-            'title' => "บทความที่ 2",
-            'content' => "เนื้อหาบทความที่ 2",
-            'status' => true,
-        ],
-        [
-            'title' => "บทความที่ 3",
-            'content' => "เนื้อหาบทความที่ 3",
-            'status' => true,
-        ],
-        [
-            'title' => "บทความที่ 4",
-            'content' => "เนื้อหาบทความที่ 4",
-            'status' => true,
-        ],
-        [
-            'title' => "บทความที่ 5",
-            'content' => "เนื้อหาบทความที่ 5",
-            'status' => true,
-        ],
-        [
-            'title' => "บทความที่ 6",
-            'content' => "เนื้อหาบทความที่ 6",
-            'status' => false,
-        ],
-    ];
-    return view('blog',compact('blogs'));
-})->name('blog');
+Route::get('blog', [AdminController::class,'index'])->name('blog');
 
 Route::get('contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('blog/{name}', function ($name) {
-    return "<h1>หน้าบทความ $name </h1>";
-});
+Route::get('blog/{id}', function ($id) {
+    return view('single_blog',compact('id'));
+})->name('blogid');
 
 Route::get('login', function () {
     return "<a href='" . route('login') . "'>Login</a>";

@@ -13,7 +13,7 @@
                         <h5 class="card-title">{{ $blog['title'] }}</h5>
                         <p class="card-text">{{ $blog['content'] }}</p>
                         <p class="text-success">เผยแพร่</p>
-                        <a href="#" class="btn btn-primary">ดูเพิ่มเติม</a>
+                        <a href="{{route('blogid', $blog['id'])}}" class="btn btn-primary">ดูเพิ่มเติม</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <h5 class="card-title">{{ $blog['title'] }}</h5>
                         <p class="card-text">{{ $blog['content'] }}</p>
                         <p class="text-danger">ฉบับร่าง</p>
-                        <a href="#" class="btn btn-primary">ดูเพิ่มเติม</a>
+                        <a href="{{route('blogid', $blog['id'])}}" class="btn btn-primary">ดูเพิ่มเติม</a>
                     </div>
                 </div>
             </div>
