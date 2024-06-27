@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return view('aboutus');
+    $name = "Ace Phatcharapol";
+    $date = "27/6/2567";
+    return view('aboutus', compact('name', 'date'));
 })->name('about');
 
 Route::get('shop', function () {
@@ -26,7 +28,39 @@ Route::get('shop', function () {
 })->name('shop');
 
 Route::get('blog', function () {
-    return view('blog');
+    $blogs = [
+        [
+            'title' => "บทความที่ 1",
+            'content' => "เนื้อหาบทความที่ 1",
+            'status' => true,
+        ],
+        [
+            'title' => "บทความที่ 2",
+            'content' => "เนื้อหาบทความที่ 2",
+            'status' => true,
+        ],
+        [
+            'title' => "บทความที่ 3",
+            'content' => "เนื้อหาบทความที่ 3",
+            'status' => true,
+        ],
+        [
+            'title' => "บทความที่ 4",
+            'content' => "เนื้อหาบทความที่ 4",
+            'status' => true,
+        ],
+        [
+            'title' => "บทความที่ 5",
+            'content' => "เนื้อหาบทความที่ 5",
+            'status' => true,
+        ],
+        [
+            'title' => "บทความที่ 6",
+            'content' => "เนื้อหาบทความที่ 6",
+            'status' => false,
+        ],
+    ];
+    return view('blog',compact('blogs'));
 })->name('blog');
 
 Route::get('contact', function () {
@@ -38,13 +72,13 @@ Route::get('blog/{name}', function ($name) {
 });
 
 Route::get('login', function () {
-    return "<a href='".route('login')."'>Login</a>";
+    return "<a href='" . route('login') . "'>Login</a>";
 });
 
 Route::get('admin/user/ace', function () {
     return "<h1>สวัสดี Admin </h1>";
 })->name('login');
 
-Route::fallback(function(){
+Route::fallback(function () {
     return "Not Found 404";
 });

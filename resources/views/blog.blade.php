@@ -1,6 +1,35 @@
 @extends('layout')
 @section('title', 'หน้าบทความทั้งหมด')
 @section('content')
-<h1>บทความทั้งหมด</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h1>บทความทั้งหมด</h1>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach ($blogs as $blog)
+        @if ($blog['status']==true)
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/images/placeholder.webp" class="card-img-top" alt="{{ $blog['title'] }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $blog['title'] }}</h5>
+                        <p class="card-text">{{ $blog['content'] }}</p>
+                        <p class="text-success">เผยแพร่</p>
+                        <a href="#" class="btn btn-primary">ดูเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/images/placeholder.webp" class="card-img-top" alt="{{ $blog['title'] }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $blog['title'] }}</h5>
+                        <p class="card-text">{{ $blog['content'] }}</p>
+                        <p class="text-danger">ฉบับร่าง</p>
+                        <a href="#" class="btn btn-primary">ดูเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            @endif
+        @endforeach
+    </div>
 @endsection
