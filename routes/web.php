@@ -18,12 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('about', [AdminController::class,'about'])->name('about');
+Route::get('blog', [AdminController::class,'index'])->name('blog');
+Route::get('create',[AdminController::class,'create']);
+Route::get('insert',[AdminController::class,'insert']);
 
 Route::get('shop', function () {
     return view('shop');
 })->name('shop');
 
-Route::get('blog', [AdminController::class,'index'])->name('blog');
 
 Route::get('contact', function () {
     return view('contact');
@@ -40,6 +42,7 @@ Route::get('login', function () {
 Route::get('admin/user/ace', function () {
     return "<h1>สวัสดี Admin </h1>";
 })->name('login');
+
 
 Route::fallback(function () {
     return "Not Found 404";

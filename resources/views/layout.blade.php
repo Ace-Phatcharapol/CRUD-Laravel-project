@@ -26,6 +26,7 @@
                     <li><a href="{{ route('shop') }}" class="nav-link px-2 text-white">สินค้า</a></li>
                     <li><a href="{{ route('blog') }}" class="nav-link px-2 text-white">บทความ</a></li>
                     <li><a href="{{ route('contact') }}" class="nav-link px-2 text-white">ติดต่อเรา</a></li>
+                    <li><a href="/create" class="nav-link px-2 text-white">เขียนบทความ</a></li>
                 </ul>
 
                 <div class="text-end">

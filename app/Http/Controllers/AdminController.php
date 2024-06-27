@@ -53,4 +53,15 @@ class AdminController extends Controller
         $date = "27/6/2567";
         return view('aboutus', compact('name', 'date'));
     }
+
+    function create(){
+        return view('form');
+    }
+
+    function insert(Request $request){
+        $request->validate([
+            'title'=>'required|max:50',
+            'content'=>'required'
+        ]);
+    }
 }
