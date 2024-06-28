@@ -22,7 +22,14 @@ class AdminController extends Controller
 
     function create()
     {
-        return view('form');
+        $blogs = DB::table('blogs')->get();
+        return view('form', ['blogs' => $blogs]);
+    }
+
+    function delete($id)
+    {
+        DB::table('blogs')->where('id', $id)->delete();
+        return redirect('create');
     }
 
     function insert(Request $request)
