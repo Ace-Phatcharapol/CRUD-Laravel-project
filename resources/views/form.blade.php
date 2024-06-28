@@ -44,9 +44,9 @@
         <td>{{$blog->title}}</td>
         <td>{{$blog->content}}</td>
         <td>@if ($blog->status == true)
-            <a href="#" class="btn btn-success">เผยแพร่</a>
+            <a href="{{route('switch',$blog->id)}}" class="btn btn-success">เผยแพร่</a>
             @else
-            <a href="#" class="btn btn-warning">ฉบับร่าง</a>
+            <a href="{{route('switch',$blog->id)}}" class="btn btn-warning">ฉบับร่าง</a>
         @endif
         <td><a href="{{route('delete',$blog->id)}}" onclick="return confirm('คุณต้องการลบบทความหรือไม่ ?')" class="btn btn-danger">ลบ</a></td>
       </tr>
