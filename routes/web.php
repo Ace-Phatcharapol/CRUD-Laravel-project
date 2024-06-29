@@ -23,7 +23,8 @@ Route::get('create',[AdminController::class,'create']);
 Route::get('insert',[AdminController::class,'insert']);
 Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
 Route::get('switch/{id}',[AdminController::class,'switch'])->name('switch');
-
+Route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
+Route::get('update/{id}',[AdminController::class,'update'])->name('update');
 
 Route::get('shop', function () {
     return view('shop');
