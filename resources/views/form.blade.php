@@ -59,4 +59,22 @@
 @else
     <p>ไม่มีบทความในระบบ</p>
 @endif
+
+<script type="importmap">
+    {
+        "imports": {
+            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+        }
+    }
+</script>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#content' ))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 @endsection

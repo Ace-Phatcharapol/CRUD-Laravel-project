@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', [BlogController::class,'showBlog'])->name('blog');
-
+Route::get('blog/{id}', [BlogController::class,'detailBlog'])->name('detail');
 //Admin
 Route::prefix('author')->group(function(){
     Route::get('/create',[AdminController::class,'create'])->name('create');
@@ -39,10 +39,6 @@ Route::get('shop', function () {
 Route::get('contact', function () {
     return view('contact');
 })->name('contact');
-
-Route::get('blog/{id}', function ($id) {
-    return view('single_blog',compact('id'));
-})->name('blogid');
 
 // Route::fallback(function () {
 //     return "Not Found 404";

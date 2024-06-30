@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +19,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js" ></script>
+    <style>
+        .ck-editor__editable_inline{
+            min-height: 200px;
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -80,6 +88,7 @@
             <div class="container py-5">
             @yield('content')
         </div>
+        @yield('scriptCKeditor')
         </main>
     </div>
 </body>
