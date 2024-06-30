@@ -4,7 +4,7 @@
     <h1>
         บทความทั้งหมด</h1>
     <hr>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
         @foreach ($blogs as $blog)
         @if ($blog->status == true)
             <div class="col">
@@ -33,4 +33,7 @@
             @endif
         @endforeach
     </div>
+    <div class="mx-auto">
+    {{ $blogs->links() }}
+</div>
 @endsection
