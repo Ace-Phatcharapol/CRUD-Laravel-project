@@ -71,7 +71,7 @@ class AdminController extends Controller
             'content'=>$request->content
         ];
         Blog::insert($data);
-        return redirect('create');
+        return redirect('/author/create');
     }
 
     function update(Request $request,$id){
@@ -91,6 +91,6 @@ class AdminController extends Controller
                 'content'=>$request->content,
             ];
             Blog::find($id)->update($data);
-            return redirect('create');
+            return redirect('/author/create');
     }
 }

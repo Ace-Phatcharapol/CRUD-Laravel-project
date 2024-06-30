@@ -17,15 +17,16 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('about', [AdminController::class,'about'])->name('about');
-Route::get('blog', [AdminController::class,'index'])->name('blog');
-Route::get('create',[AdminController::class,'create'])->name('create');
-Route::post('insert',[AdminController::class,'insert']);
-Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
-Route::get('switch/{id}',[AdminController::class,'switch'])->name('switch');
-Route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
-Route::post('update/{id}',[AdminController::class,'update'])->name('update');
+Route::prefix('author')->group(function(){
+    Route::get('/blog', [AdminController::class,'index'])->name('blog');
+    Route::get('/create',[AdminController::class,'create'])->name('create');
+    Route::post('/insert',[AdminController::class,'insert']);
+    Route::get('/delete/{id}',[AdminController::class,'delete'])->name('delete');
+    Route::get('/switch/{id}',[AdminController::class,'switch'])->name('switch');
+    Route::get('/edit/{id}',[AdminController::class,'edit'])->name('edit');
+    Route::post('/update/{id}',[AdminController::class,'update'])->name('update');
+});
+Route::get('/about', [AdminController::class,'about'])->name('about');
 
 Route::get('shop', function () {
     return view('shop');
@@ -39,9 +40,9 @@ Route::get('blog/{id}', function ($id) {
     return view('single_blog',compact('id'));
 })->name('blogid');
 
-Route::fallback(function () {
-    return "Not Found 404";
-});
+// Route::fallback(function () {
+//     return "Not Found 404";
+// });
 
 Auth::routes();
 

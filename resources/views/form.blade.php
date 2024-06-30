@@ -3,7 +3,7 @@
 @section('content')
     <h2>เขียนบทความใหม่</h2>
     <hr>
-    <form method="POST" action="/insert">
+    <form method="POST" action="/author/insert">
         @csrf
     <div class="form-group mb-3">
         <label for="title" class="form-label">ชื่อบทความ</label>
