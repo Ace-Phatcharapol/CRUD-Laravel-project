@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title', 'เขียนบทความ')
 @section('content')
     <h2>เขียนบทความใหม่</h2>
     <hr>
-    <form action="/insert">
+    <form method="POST" action="/insert">
         @csrf
     <div class="form-group mb-3">
         <label for="title" class="form-label">ชื่อบทความ</label>

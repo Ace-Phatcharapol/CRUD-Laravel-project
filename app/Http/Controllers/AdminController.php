@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     function index()
     {
         $blogs = DB::table('blogs')->paginate(6);
@@ -22,7 +27,7 @@ class AdminController extends Controller
 
     function create()
     {
-        $blogs = DB::table('blogs')->paginate(6);
+        $blogs = DB::table('blogs')->orderBy('id', 'desc')->paginate(6);
         return view('form', ['blogs' => $blogs]);
     }
 

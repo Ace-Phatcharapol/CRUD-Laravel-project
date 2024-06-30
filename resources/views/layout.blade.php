@@ -37,10 +37,8 @@
             </div>
         </div>
     </header>
+
     <section>
-        @yield('banner')
-    </section>
-    <section class="container py-5">
         @yield('content')
     </section>
     <footer class="py-3 mt-4 bg-dark">

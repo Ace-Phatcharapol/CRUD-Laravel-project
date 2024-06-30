@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title','แก้ไขบทความ')
 @section('content')
 <h2>แก้ไขบทความ</h2>
     <hr>
-    <form action="{{route('update',$blog->id)}}">
+    <form method="POST" action="{{route('update',$blog->id)}}">
         @csrf
     <div class="form-group mb-3">
         <label for="title" class="form-label">ชื่อบทความ</label>

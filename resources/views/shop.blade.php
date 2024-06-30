@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title', 'หน้าสินค้า')
 @section('content')
 <h1>สินค้าทั้งหมด</h1>

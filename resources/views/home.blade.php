@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     {{ __('You are logged in!') }}
+                    <br>
+                    <a href="{{route('create')}}" class="btn btn-primary mt-3">เขียนบทความ</a>
                 </div>
             </div>
         </div>
