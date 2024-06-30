@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +18,11 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/blog', [BlogController::class,'showBlog'])->name('blog');
+
+//Admin
 Route::prefix('author')->group(function(){
-    Route::get('/blog', [AdminController::class,'index'])->name('blog');
     Route::get('/create',[AdminController::class,'create'])->name('create');
     Route::post('/insert',[AdminController::class,'insert']);
     Route::get('/delete/{id}',[AdminController::class,'delete'])->name('delete');

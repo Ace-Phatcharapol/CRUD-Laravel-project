@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $blog->title }}</h5>
                         <p class="card-text">{{ Str::limit($blog->content,100) }}</p>
-                        <p class="text-success">เผยแพร่</p>
+                        {{-- <p class="text-success">เผยแพร่</p> --}}
                         <a href="{{route('blogid', $blog->id)}}" class="btn btn-primary">ดูเพิ่มเติม</a>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $blog->title }}</h5>
                         <p class="card-text">{{ Str::limit($blog->content,100) }}</p>
-                        <p class="text-danger">ฉบับร่าง</p>
+                        {{-- <p class="text-danger">ฉบับร่าง</p> --}}
                         <a href="{{route('blogid', $blog->id)}}" class="btn btn-primary">ดูเพิ่มเติม</a>
                     </div>
                 </div>

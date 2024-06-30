@@ -11966,3 +11966,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/*Custom CSS*/
+.pagination{
+	justify-content: center !important;
+}
