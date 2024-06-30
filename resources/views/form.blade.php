@@ -27,6 +27,7 @@
     <a href="{{route('blog')}}" class="btn btn-success">บทความทั้งหมด</a>
 </form>
 <br>
+@if (count($blogs)>0)
 <table class="table table-bordered text-center align-middle">
     <thead>
       <tr>
@@ -55,4 +56,7 @@
 @endforeach
 </table>
 {{ $blogs->links() }}
+@else
+    <p>ไม่มีบทความในระบบ</p>
+@endif
 @endsection

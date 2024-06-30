@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('about', [AdminController::class,'about'])->name('about');
 Route::get('blog', [AdminController::class,'index'])->name('blog');
-Route::get('create',[AdminController::class,'create']);
+Route::get('create',[AdminController::class,'create'])->name('create');
 Route::get('insert',[AdminController::class,'insert']);
 Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
 Route::get('switch/{id}',[AdminController::class,'switch'])->name('switch');

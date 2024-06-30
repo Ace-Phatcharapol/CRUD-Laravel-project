@@ -33,7 +33,5 @@
             @endif
         @endforeach
     </div>
-    <div class="mx-auto">
     {{ $blogs->links() }}
-</div>
 @endsection

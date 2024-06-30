@@ -23,7 +23,8 @@
         <span class="text-danger">{{$message}}</span>
     </div>
     @enderror
-    <input type="submit" value="อัปเดต" class="btn btn-primary">
+    <input type="submit" value="อัปเดต" class="btn btn-primary" onclick="confirm('ยืนยันการบันทึกเนื้อหาใหม่หรือไม่ ?')">
+    <a href="{{route('create')}}" class="btn btn-secondary">ย้อนกลับ</a>
     <a href="{{route('blog')}}" class="btn btn-success">บทความทั้งหมด</a>
 </form>
 @endsection
