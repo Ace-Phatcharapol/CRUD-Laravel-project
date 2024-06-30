@@ -1,4 +1,4 @@
 /*Custom CSS*/
 .pagination{
-	justify-content: center;
+	justify-content: center !important;
 }

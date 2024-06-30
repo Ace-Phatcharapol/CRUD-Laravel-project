@@ -42,10 +42,14 @@ Route::get('login', function () {
     return "<a href='" . route('login') . "'>Login</a>";
 });
 
-Route::get('admin/user/ace', function () {
-    return "<h1>สวัสดี Admin </h1>";
-})->name('login');
+// Route::get('admin/user/ace', function () {
+//     return "<h1>สวัสดี Admin </h1>";
+// })->name('login');
 
 Route::fallback(function () {
     return "Not Found 404";
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
