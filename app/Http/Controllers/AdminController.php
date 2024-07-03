@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Blog;
+use App\Models\User;
 
 class AdminController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function adminLogin()
+    {
+        return view('admin');
     }
 
     function index()
@@ -85,5 +91,10 @@ class AdminController extends Controller
             ];
             Blog::find($id)->update($data);
             return redirect('/author/create');
+    }
+
+    function manageUsers(){
+        $users = User::paginate(6);
+        return view('users',compact('users'));
     }
 }

@@ -23,6 +23,8 @@ Route::get('/blog', [BlogController::class,'showBlog'])->name('blog');
 Route::get('blog/{id}', [BlogController::class,'detailBlog'])->name('detail');
 Route::get('/about', [BlogController::class,'about'])->name('about');
 
+Route::get('/users',[AdminController::class,'manageUsers'])->name('users');
+
 //Admin
 Route::prefix('author')->group(function(){
     Route::get('/create',[AdminController::class,'create'])->name('create');
@@ -47,4 +49,4 @@ Route::get('contact', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminLogin'])->name('admin');

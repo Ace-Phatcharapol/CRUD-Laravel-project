@@ -31,17 +31,20 @@
 <table class="table table-bordered text-center align-middle">
     <thead>
       <tr>
-        <th scope="col" class="col-1">id</th>
+        <th scope="col" class="col-1">ลำดับ</th>
         <th scope="col" class="col-2">ชื่อบทความ</th>
         <th scope="col" class="col-4">เนื้อหาบทความ</th>
         <th scope="col" class="col-2">สถานะ</th>
         <th scope="col" class="col-3">จัดการบทความ</th>
       </tr>
     </thead>
-@foreach ($blogs as $blog)
+@foreach ($blogs as $index => $blog)
+@php
+$sequenceNumber = ($blogs->currentPage() - 1) * $blogs->perPage() + $index + 1;
+@endphp
     <tbody>
       <tr>
-        <th scope="row">{{$blog->id}}</th>
+        <th scope="row">{{$sequenceNumber}}</th>
         <td>{{$blog->title}}</td>
         <td>{{Str::limit($blog->content,100)}}</td>
         <td>@if ($blog->status == true)
