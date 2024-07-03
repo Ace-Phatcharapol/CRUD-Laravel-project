@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-use Illuminate\Support\Facades\Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BlogFactory extends Factory

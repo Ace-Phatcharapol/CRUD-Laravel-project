@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'จัดการผู้ใช้')
+@section('title', 'จัดการข้อมูลผู้ใช้')
 
 @section('content')
+<h2>จัดการข้อมูลผู้ใช้</h2><hr>
 <table class="table table-bordered text-center align-middle">
     <thead>
       <tr>
         <th scope="col" class="col-1">ลำดับ</th>
         <th scope="col" class="col-4">ชื่อผู้ใช้</th>
         <th scope="col" class="col-4">อีเมล</th>
-        <th scope="col" class="col-3">จัดการผู้ใช้</th>
+        <th scope="col" class="col-1">สถานะ</th>
+        <th scope="col" class="col-2">จัดการข้อมูลผู้ใช้</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +23,7 @@
             <th scope="row">{{ $sequenceNumber }}</th>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
+            <td>{{ $user->type }}</td>
             <td>
                 <a href="#" class="btn btn-warning">แก้ไข</a>
                 <a href="#" onclick="return confirm('คุณต้องการลบผู้ใช้นี้หรือไม่?')" class="btn btn-danger">ลบ</a>
