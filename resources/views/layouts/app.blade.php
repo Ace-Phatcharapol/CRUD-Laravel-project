@@ -34,6 +34,14 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Online Shop
                 </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-auto">
+                    <li><a href="/" class="nav-link px-2 text-white">หน้าหลัก</a></li>
+                    <li><a href="{{ route('about') }}" class="nav-link px-2 text-white">เกี่ยวกับเรา</a></li>
+                    <li><a href="{{ route('shop') }}" class="nav-link px-2 text-white">สินค้า</a></li>
+                    <li><a href="{{ route('blog') }}" class="nav-link px-2 text-white">บทความ</a></li>
+                    <li><a href="{{ route('contact') }}" class="nav-link px-2 text-white">ติดต่อเรา</a></li>
+                </ul>
+                <div class="text-end">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -81,6 +89,7 @@
                     </ul>
                 </div>
             </div>
+            </div>
         </nav>
             
         <main>
@@ -91,5 +100,15 @@
         @yield('scriptCKeditor')
         </main>
     </div>
+    <footer class="py-3 mt-4 bg-dark">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-white">หน้าหลัก</a></li>
+            <li class="nav-item"><a href="{{ route('about') }}" class="nav-link px-2 text-white">เกี่ยวกับเรา</a></li>
+            <li class="nav-item"><a href="{{ route('shop') }}" class="nav-link px-2 text-white">สินค้า</a></li>
+            <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link px-2 text-white">บทความ</a></li>
+            <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link px-2 text-white">ติดต่อเรา</a></li>
+        </ul>
+        <p class="text-center text-white">© 2024 Company, Inc</p>
+    </footer>
 </body>
 </html>

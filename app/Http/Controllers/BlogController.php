@@ -16,4 +16,11 @@ class BlogController extends Controller
         $blog = Blog::find($id);
         return view('detail',compact('blog'));
     }
+
+    function about()
+    {
+        $name = "Ace Phatcharapol";
+        $date = "27/6/2567";
+        return view('aboutus', compact('name', 'date'));
+    }
 }

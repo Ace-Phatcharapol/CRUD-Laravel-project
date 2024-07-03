@@ -19,13 +19,6 @@ class AdminController extends Controller
         return view('blog', ['blogs' => $blogs]);
     }
 
-    function about()
-    {
-        $name = "Ace Phatcharapol";
-        $date = "27/6/2567";
-        return view('aboutus', compact('name', 'date'));
-    }
-
     function create()
     {
         $blogs = Blog::orderBy('id', 'desc')->paginate(6);

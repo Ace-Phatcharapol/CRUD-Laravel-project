@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/blog', [BlogController::class,'showBlog'])->name('blog');
 Route::get('blog/{id}', [BlogController::class,'detailBlog'])->name('detail');
+Route::get('/about', [BlogController::class,'about'])->name('about');
+
 //Admin
 Route::prefix('author')->group(function(){
     Route::get('/create',[AdminController::class,'create'])->name('create');
@@ -30,7 +32,6 @@ Route::prefix('author')->group(function(){
     Route::get('/edit/{id}',[AdminController::class,'edit'])->name('edit');
     Route::post('/update/{id}',[AdminController::class,'update'])->name('update');
 });
-Route::get('/about', [AdminController::class,'about'])->name('about');
 
 Route::get('shop', function () {
     return view('shop');
