@@ -90,7 +90,7 @@ class AdminController extends Controller
                 'content'=>$request->content,
             ];
             Blog::find($id)->update($data);
-            return redirect('/author/create');
+            return redirect('/author/create')->with('success',"บันทึกข้อมูลเรียบร้อย");
     }
 
     function manageUsers(){

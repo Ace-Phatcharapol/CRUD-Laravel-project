@@ -3,6 +3,9 @@
 @section('content')
     <h2>เขียนบทความใหม่</h2>
     <hr>
+    @if (@session('success'))
+    <div class="alert alert-success">{{@session('success')}}</div>
+    @endif
     <form method="POST" action="/author/insert">
         @csrf
     <div class="form-group mb-3">
